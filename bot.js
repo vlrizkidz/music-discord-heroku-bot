@@ -18,10 +18,10 @@ bot.music.start(bot, {
 });
 
 // Events.
-*bot.on("ready", function() {
-*    bot.user.setActivity(`in Dream`);
-*    console.log(`${bot.user.username} is Ready!`);
-*});
+//bot.on("ready", function() {
+//    bot.user.setActivity(`in Dream`);
+//    console.log(`${bot.user.username} is Ready!`);
+//});
 
 client.on("ready", () => {
   const channel = client.channels.get("561532573868752916");
