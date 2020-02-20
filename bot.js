@@ -23,7 +23,7 @@ bot.on("ready", function() {
     console.log(`${bot.user.username} is Ready!`);
 });
 
-client.on('ready', () => {
+client.on("ready", () => {
   // Get the channel via ID
   let channel = client.channels.get('561532573868752916');
   // Or via name (less persistent)
@@ -36,3 +36,11 @@ client.on('ready', () => {
 // Bot Login.
 // bot.login('YourAwesomeBotToken');
 bot.login(process.env.BOT_TOKEN);
+
+
+//576876993166180362
+//561280914861326367
+//561285091440066564
+//561285183039602696
+//561285289507815424
+//561802892030377994
