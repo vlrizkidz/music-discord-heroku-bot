@@ -38,8 +38,6 @@ client.on('message', message => {
   //...
 });
 
-client.login('token');
-
 // Bot Login.
 // bot.login('YourAwesomeBotToken');
 bot.login(process.env.BOT_TOKEN);
