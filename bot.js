@@ -26,7 +26,7 @@ bot.on("ready", function() {
 bot.on("ready", () => {
   const channel = bot.channels.get("561532573868752916");
   if (!channel) return console.error("The channel does not exist!");
-  channel.join().then(connection => {
+  voiceChannel.join().then(connection => {
     console.log("Successfully connected.");
   }).catch(e => {
     console.error(e);
