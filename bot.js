@@ -1,7 +1,7 @@
 const Discord = require("discord.js"); // We Call The Packages.
 // const PREFIX = "<"; // You can change this Prefix to whatever you want.
 const PREFIX = process.env.PREFIX;
-
+const client = new Discord.Client();
 var bot = new Discord.Client();
 
 // Put the Music module in the new Client object.
@@ -23,13 +23,22 @@ bot.on("ready", function() {
     console.log(`${bot.user.username} is Ready!`);
 });
 
-bot.on("ready", () => {
-  const VoiceChannel = bot.channels.get("561532573868752916");
-  if (!channel) return console.error("The channel does not exist!");
-  voiceChannel.join()
-  .then(connection => console.log('Connected!'))
+client.on('ready', () => {
+  // Get the channel via ID
+  let channel = client.channels.get('561532573868752916');
+  // Or via name (less persistent)
+  channel = client.channels.find('name', 'Music');
+
+  channel.join()
+  .then(connection => console.log('Connected'))
   .catch(console.error);
-});    
+});
+
+client.on('message', message => {
+  //...
+});
+
+client.login('token');
 
 // Bot Login.
 // bot.login('YourAwesomeBotToken');
