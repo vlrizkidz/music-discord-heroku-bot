@@ -28,14 +28,9 @@ client.on('ready', () => {
   let channel = client.channels.get('561532573868752916');
   // Or via name (less persistent)
   channel = client.channels.find('name', 'Music');
-
   channel.join()
   .then(connection => console.log('Connected'))
   .catch(console.error);
-});
-
-client.on('message', message => {
-  //...
 });
 
 // Bot Login.
