@@ -36,7 +36,7 @@ client.on("ready", () => {
 });
 //client.on("ready", () => {
   // Get the channel via ID
-  //let VoiceChannel = client.channels.get('561532573868752916');
+  //let VoiceChannel = client.channels.get('56153257386875291');
   // Or via name (less persistent)
   //channel = client.channels.find('name', 'Music');
   //VoiceChannel.join()
