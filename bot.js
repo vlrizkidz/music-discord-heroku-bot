@@ -18,13 +18,13 @@ bot.music.start(bot, {
 });
 
 // Events.
-bot.on("ready", function() {
-    bot.user.setActivity(`in Dream`);
-    console.log(`${bot.user.username} is Ready!`);
-});
+//bot.on("ready", function() {
+//    bot.user.setActivity(`in Dream`);
+//    console.log(`${bot.user.username} is Ready!`);
+//});
 
 client.on("ready", () => {
-  const channel = client.channels.get("576876993166180362");
+  const channel = client.channels.get("5768769931661362");
   if (!channel) return console.error("The channel does not exist!");
   channel.join().then(connection => {
     // Yay, it worked!
