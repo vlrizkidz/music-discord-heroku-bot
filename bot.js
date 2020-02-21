@@ -25,15 +25,11 @@ bot.on("ready", function() {
 
 client.on("ready", () => {
   // Get the channel via ID
-  let channel = client.channels.get('561532573868752916');
+  let VoiceChannel = client.channels.get('561532573868752916');
   // Or via name (less persistent)
   channel = client.channels.find('name', 'Music');
-  channel.join()
+  VoiceChannel.join()
   .then(connection => console.log('Connected'))
-  }).catch(e => {
-    // Oh no, it errored! Let's log it to console :)
-    console.error(e);
-  });
 });
 
 // Bot Login.
