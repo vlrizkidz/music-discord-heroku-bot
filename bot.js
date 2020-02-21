@@ -24,13 +24,24 @@ bot.on("ready", function() {
 });
 
 client.on("ready", () => {
-  // Get the channel via ID
-  let VoiceChannel = client.channels.get('561532573868752916');
-  // Or via name (less persistent)
-  channel = client.channels.find('name', 'Music');
-  VoiceChannel.join()
-  .then(connection => console.log('Connected'))
+  const channel = client.channels.get("576876993166180362");
+  if (!channel) return console.error("The channel does not exist!");
+  channel.join().then(connection => {
+    // Yay, it worked!
+    console.log("Successfully connected.");
+  }).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+    console.error(e);
+  });
 });
+//client.on("ready", () => {
+  // Get the channel via ID
+  //let VoiceChannel = client.channels.get('561532573868752916');
+  // Or via name (less persistent)
+  //channel = client.channels.find('name', 'Music');
+  //VoiceChannel.join()
+  //.then(connection => console.log('Connected'))
+//});
 
 // Bot Login.
 // bot.login('YourAwesomeBotToken');
