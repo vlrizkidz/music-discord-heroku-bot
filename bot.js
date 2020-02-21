@@ -30,7 +30,10 @@ client.on("ready", () => {
   channel = client.channels.find('name', 'Music');
   channel.join()
   .then(connection => console.log('Connected'))
-  .catch(console.error);
+  }).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+    console.error(e);
+  });
 });
 
 // Bot Login.
