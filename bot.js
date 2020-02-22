@@ -27,13 +27,54 @@ bot.on("ready", () => {
   const channel = bot.channels.get("665123932881551360");
   if (!channel) return console.error("The channel does not exist!");
   channel.join().then(connection => {
-    // Yay, it worked!
-    console.log("Successfully connected.");
+    console.log("Successfully connected Voice Channel");
   }).catch(e => {
-    // Oh no, it errored! Let's log it to console :)
     console.error(e);
   });
 });
+
+bot.on('ready', () => {
+   bot.user.setPresence({ main de { name: 'with discord.js' }, status: 'idle' })
+   console.log(`${client.user.username} is up and running!`);
+})
+
+module.exports = async (oldMember,newMember,message) => {
+
+    if(newMember.user.bot) return;
+    let newUserChannel = newMember.voiceChannel
+    let oldUserChannel = oldMember.voiceChannel
+
+    let newdate = new Date(newMember.joinedTimestamp)
+
+    var log =  message.guild.channels.find(ch => ch.name.includes('voice-log'));
+
+    if(oldUserChannel === undefined && newUserChannel !== undefined) {
+        log.send(`:small_red_triangle_down: <@${newMember.user.id}> Left a voice channel at ${newdate}`); 
+    } else if(newUserChannel === undefined){
+        log.send(`:white_check_mark: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
+    }else if(oldUserChannel !== newUserChannel){
+        log.send(`:arrow_right: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
+    }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Bot Login.
 // bot.login('YourAwesomeBotToken');
