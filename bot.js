@@ -34,18 +34,37 @@ bot.login(process.env.BOT_TOKEN);
 //561285183039602696
 //561285289507815424
 //561802892030377994
-bot.on('voiceStateUpdate', (oldMember, newMember) => {
-  let newUserChannel = newMember.voiceChannel
-  let oldUserChannel = oldMember.voiceChannel
-  var channel = client.channels.get('572351018189324299');
 
-  if(oldUserChannel === undefined && newUserChannel !== undefined) {
+// Joins the voice channel as soon as the client starts up
+client.on('ready', () => {
+  // Get the channel via ID
+  let channel = client.channels.get('561245349818269696');
+  // Or via name (less persistent)
+  //channel = client.channels.find('name', 'music');
 
-    message.channel.send('has joined a voice channel');
+  channel.join()
+  .then(connection => console.log('Connected'))
+  .catch(console.error);
+});
 
-  } else if(newUserChannel === undefined){
+client.on('message', message => {
+  //...
+});
 
-    message.channel.send('has leave a voice channel');
 
-  }
-})
+
+//bot.on('voiceStateUpdate', (oldMember, newMember) => {
+//  let newUserChannel = newMember.voiceChannel
+//  let oldUserChannel = oldMember.voiceChannel
+//  var channel = client.channels.get('572351018189324299');
+
+//  if(oldUserChannel === undefined && newUserChannel !== undefined) {
+
+  //  message.channel.send('has joined a voice channel');
+
+//  } else if(newUserChannel === undefined){
+
+//    message.channel.send('has leave a voice channel');
+
+//  }
+//})
