@@ -24,7 +24,7 @@ bot.music.start(bot, {
 //});
 
 bot.on("ready", () => {
-  const channel = client.channels.get("665123932881551360");
+  const channel = bot.channels.get("665123932881551360");
   if (!channel) return console.error("The channel does not exist!");
   channel.join().then(connection => {
     // Yay, it worked!
