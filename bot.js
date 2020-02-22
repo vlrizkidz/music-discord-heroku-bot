@@ -66,8 +66,8 @@ bot.on("voiceStateUpdate",(oldMember,newMember,message)=>{
         log.send(`:white_check_mark: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
     }else if(oldUserChannel !== newUserChannel){
         log.send(`:arrow_right: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
-    );
-
+process.on("unhandledRejection", console.error);
+        
 //bot.on('voiceStateUpdate', (oldMember, newMember) => {
 //  let newUserChannel = newMember.voiceChannel
 //  let oldUserChannel = oldMember.voiceChannel
