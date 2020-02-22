@@ -38,15 +38,15 @@ bot.login(process.env.BOT_TOKEN);
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel
   let oldUserChannel = oldMember.voiceChannel
-
+  var channel = client.channels.get('572351018189324299');
 
   if(oldUserChannel === undefined && newUserChannel !== undefined) {
 
-    textChannel.send(`${newMember} has joined the voice channel.`);     // User Joins a voice channel
+message.channel.send('has joined a voice channel');
 
   } else if(newUserChannel === undefined){
 
-    textChannel.send(`${newMember} has left the voice channel.`);    // User leaves a voice channel
+message.channel.send('has leave a voice channel');
 
   }
 })
