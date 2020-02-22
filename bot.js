@@ -70,8 +70,8 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
             .setColor("#FFF")
             .addField('.............................................', `${user} is now ${stat}`);
 
-        send(botembed);
-
+        .send(botembed);
+        .catch(console.error)
         userStatus = [];
 });    
 
