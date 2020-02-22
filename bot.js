@@ -56,20 +56,31 @@ console.log(currentdate)
   }
 });
 
-async function statuscheck() {
-    const statusArray = {};
-    await bot.guilds.array().forEach(async g => {
-        const status = [];
-        await g.members.array().forEach(m => {
-            status.push(m.user.presence.status);
-        });
-        statusArray[g.id] = status;
-    });
-    console.log('set'); // /So I know the timer works
-    return statusArray;
-}
-bot.on('ready', async bot => {
-    setInterval(await statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
+let userStatus = [];
+
+bot.on("presenceUpdate", (oldMember, newMember) => {
+    let username = newMember.user.username;
+    let status = newMember.user.presence.status;
+    userStatus.push(username, status);
+    console.log(`${newMember.user.username} is now ${newMember.user.presence.status}`);
+})
+
+bot.on('message', (message) => {
+    // if (!message.content.startsWith(prefix)) return;
+    if (console.log())
+        let [username, status] = userStatus;
+    let guildChannels = newMember.guild.channels;
+    guildChannels.find('name', 'nothing')
+    if (message.content.startsWith(prefix + "status")) {
+        let botembed = new Discord.RichEmbed()
+            .setDescription("Status Update")
+            .setColor("#FFF")
+            .addField('.............................................', `${username} is now ${status}`);
+
+        message.channel.send(botembed);
+
+        userStatus = [];
+    }
 });
 
 
