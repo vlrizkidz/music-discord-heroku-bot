@@ -53,17 +53,24 @@ console.log(currentdate)
       textChannel.send(`${newMember} has left the voice channel.`);
       currentdate
 console.log(currentdate)
-  } else if(oldUserChannel === undefined) {
-  var currentdate = new Date(); 
-      textChannel.send(`${newMember} has switch the voice channel.`);
-      currentdate
-console.log(currentdate)
   }
 });
 
+async function statuscheck() {
+    const statusArray = {};
+    await bot.guilds.array().forEach(async g => {
+        const status = [];
+        await g.members.array().forEach(m => {
+            status.push(m.user.presence.status);
+        });
+        statusArray[g.id] = status;
+    });
+    console.log('set'); // /So I know the timer works
+    return statusArray;
+}
 
-
-
+bot.on('ready', async bot => {
+    setInterval(await statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
 
 
 
