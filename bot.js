@@ -24,7 +24,7 @@ bot.on("ready", function() {
 });
 
 bot.on("ready", () => {
-  const channel = bot.channels.get("45346345435");
+  const channel = bot.channels.get("561245349818269696");
   if (!channel) return console.error("The channel does not exist!");
   channel.join().then(connection => {
     // Yay, it worked!
