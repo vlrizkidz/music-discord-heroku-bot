@@ -23,7 +23,21 @@ bot.music.start(bot, {
 //    console.log(`${bot.user.username} is Ready!`);
 //});
 
+// Joins the voice channel as soon as the client starts up
+client.on('ready', () => {
+  // Get the channel via ID
+  let channel = client.channels.get('5612453498269696');
+  // Or via name (less persistent)
+  channel = client.channels.find('name', 'Music');
 
+  channel.join()
+  .then(connection => console.log('Connected'))
+  .catch(console.error);
+});
+
+client.on('message', message => {
+  //...
+});
 
 // Bot Login.
 // bot.login('YourAwesomeBotToken');
