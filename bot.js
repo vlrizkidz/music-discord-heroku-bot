@@ -51,9 +51,7 @@ client.on('message', message => {
   //...
 });
 
-
-module.exports = async (oldMember,newMember,message) => {
-
+bot.on("voiceStateUpdate",(oldMember,newMember,message)=>{
     if(newMember.user.bot) return;
     let newUserChannel = newMember.voiceChannel
     let oldUserChannel = oldMember.voiceChannel
