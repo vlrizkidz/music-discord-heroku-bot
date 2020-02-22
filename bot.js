@@ -73,7 +73,6 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
         channel.send(botembed);
 
         userStatus = [];
-    }
 });    
 
 
