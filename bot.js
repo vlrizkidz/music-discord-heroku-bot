@@ -38,7 +38,7 @@ bot.music.start(bot, {
 //   console.log(`${client.user.username} is up and running!`);
 //})
 
-client.on('voiceStateUpdate', (oldMember, newMember) => {
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
   let oldUserChannel = oldMember.voiceChannel
 
