@@ -23,25 +23,25 @@ bot.music.start(bot, {
 //    console.log(`${bot.user.username} is Ready!`);
 //});
 
-client.on("ready", () => {
-  const channel = client.channels.get("57687699311362");
-  if (!channel) return console.error("The channel does not exist!");
-  channel.join().then(connection => {
-    // Yay, it worked!
-    console.log("Successfully connected.");
-  }).catch(e => {
-    // Oh no, it errored! Let's log it to console :)
-    console.error(e);
-  });
-});
 //client.on("ready", () => {
-  // Get the channel via ID
-  //let VoiceChannel = client.channels.get('5615325775291');
-  // Or via name (less persistent)
-  //channel = client.channels.find('name', 'Music');
-  //VoiceChannel.join()
-  //.then(connection => console.log('Connected'))
+//  const channel = client.channels.get("57687699311362");
+//  if (!channel) return console.error("The channel does not exist!");
+//  channel.join().then(connection => {
+    // Yay, it worked!
+//    console.log("Successfully connected.");
+//  }).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+//    console.error(e);
+//  });
 //});
+client.on("ready", () => {
+  // Get the channel via ID
+  let VoiceChannel = client.channels.get('561245349818269696');
+  // Or via name (less persistent)
+  channel = client.channels.find('name', 'Music');
+  VoiceChannel.join()
+  .then(connection => console.log('Connected'))
+  .catch(console.error);});
 
 // Bot Login.
 // bot.login('YourAwesomeBotToken');
