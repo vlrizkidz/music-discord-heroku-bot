@@ -60,7 +60,7 @@ module.exports = async (oldMember,newMember,message) => {
 
     let newdate = new Date(newMember.joinedTimestamp)
 
-    var log =  message.guild.channels.find(ch => ch.name.includes('voice-log')) || message.guild.channels.find(ch => ch.name.includes('member-log')) || message.guild.channels.find(ch => ch.name.includes('log')) || message.guild.channels.find(ch => ch.name.includes('logs')) || message.guild.channels.find(ch => ch.name.includes('general'));
+    var log =  message.guild.channels.find(ch => ch.name.includes('bot')) || message.guild.channels.find(ch => ch.name.includes('nothing')) || message.guild.channels.find(ch => ch.name.includes('empty'));
 
     if(oldUserChannel === undefined && newUserChannel !== undefined) {
         log.send(`:small_red_triangle_down: <@${newMember.user.id}> Left a voice channel at ${newdate}`); 
