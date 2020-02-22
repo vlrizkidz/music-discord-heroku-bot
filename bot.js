@@ -35,6 +35,16 @@ bot.login(process.env.BOT_TOKEN);
 //561285289507815424
 //561802892030377994
 
+  let voiceChannels = message.guild.channels.filter(channel => channel.type == 'voice');
+
+  voiceChannels.forEach(channel =>
+    channel.join()
+      .then(connection => {
+        dispatcher.on("end", end => { channel.leave() });
+      })
+      .catch(console.error)
+  );
+
 
 module.exports = async (oldMember, newMember, message) => {
     if(newState.user.bot) return;
