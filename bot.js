@@ -70,7 +70,6 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
             .addField('.............................................', `${user} is now ${stat}`);
     guildChannels.find('name', 'nothing')
         .send(botembed);
-        .catch(console.error)
         userStatus = [];
 });    
 
