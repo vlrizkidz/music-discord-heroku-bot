@@ -41,14 +41,17 @@ bot.music.start(bot, {
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
   let oldUserChannel = oldMember.voiceChannel
-
+  let textChannel = oldMember.guild.channels.get('572351018189324299');
+  if (!textChannel) throw new Error("That channel does not exist.");
   if (oldUserChannel === undefined && newUserChannel !== undefined) {
   var currentdate = new Date(); 
-    currentdate
+      currentdate
+  textChannel.send(`${newMember} has joined the voice channel.`);
 console.log(currentdate)
   } else if(newUserChannel === undefined) {
   var currentdate = new Date(); 
-    currentdate
+      textChannel.send(`${newMember} has left the voice channel.`);
+      currentdate
 console.log(currentdate)
   }
 });
