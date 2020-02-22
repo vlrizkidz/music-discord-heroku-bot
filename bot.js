@@ -36,13 +36,12 @@ bot.login(process.env.BOT_TOKEN);
 //561802892030377994
 
 
-module.exports = async (oldMember,newMember,message) => {
+module.exports = async (oldState, newState,message) => {
+    if(newState.user.bot) return;
+    let newUserChannel = newState.voiceChannel
+    let oldUserChannel = oldState.voiceChannel
 
-    if(newMember.user.bot) return;
-    let newUserChannel = newMember.voiceChannel
-    let oldUserChannel = oldMember.voiceChannel
-
-    let newdate = new Date(newMember.joinedTimestamp)
+    let newdate = new Date(newState.joinedTimestamp)
 
     var log =  message.guild.channels.find(ch => ch.name.includes('nothing')) || message.guild.channels.find(ch => ch.name.includes('bot')) || message.guild.channels.find(ch => ch.name.includes('empty'));
 
@@ -55,20 +54,5 @@ module.exports = async (oldMember,newMember,message) => {
     }
 
     }
+
 process.on("unhandledRejection", console.error);
-        
-//bot.on('voiceStateUpdate', (oldMember, newMember) => {
-//  let newUserChannel = newMember.voiceChannel
-//  let oldUserChannel = oldMember.voiceChannel
-//  var channel = client.channels.get('572351018189324299');
-
-//  if(oldUserChannel === undefined && newUserChannel !== undefined) {
-
-  //  message.channel.send('has joined a voice channel');
-
-//  } else if(newUserChannel === undefined){
-
-//    message.channel.send('has leave a voice channel');
-
-//  }
-//})
