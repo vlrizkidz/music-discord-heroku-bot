@@ -56,6 +56,7 @@ console.log(currentdate)
   }
 });
 
+bot.on('ready', async bot => {
 async function statuscheck() {
     const statusArray = {};
     await bot.guilds.array().forEach(async g => {
@@ -68,7 +69,7 @@ async function statuscheck() {
     console.log('set'); // /So I know the timer works
     return statusArray;
 }
-
+});
 //bot.on('ready', async bot => {
 //    setInterval(await statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
 //});
