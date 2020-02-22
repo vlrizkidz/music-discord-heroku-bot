@@ -59,13 +59,13 @@ console.log(currentdate)
 let userStatus = [];
 
 bot.on("presenceUpdate", (oldMember, newMember) => {
-    let username = newMember.user.username;
-    let status = newMember.user.presence.status;
+    let user = newMember.user.username;
+    let stat = newMember.user.presence.status;
     let guildChannels = newMember.guild.channels;
     guildChannels.find('name', 'nothing')
     userStatus.push(username, status);
     console.log(`${newMember.user.username} is now ${newMember.user.presence.status}`);
-    let [username, status] = userStatus;
+    let [user, stat] = userStatus;
     if (message.content.startsWith(prefix + "status")) {
         let botembed = new Discord.RichEmbed()
             .setDescription("Status Update")
