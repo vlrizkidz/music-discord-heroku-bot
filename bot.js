@@ -48,9 +48,14 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
       currentdate
   textChannel.send(`${newMember} has joined the voice channel.`);
 console.log(currentdate)
-  } else if(newUserChannel === undefined) {
+  } if(newUserChannel === undefined) {
   var currentdate = new Date(); 
       textChannel.send(`${newMember} has left the voice channel.`);
+      currentdate
+console.log(currentdate)
+  } else if(oldUserChannel === undefined) {
+  var currentdate = new Date(); 
+      textChannel.send(`${newMember} has switch the voice channel.`);
       currentdate
 console.log(currentdate)
   }
