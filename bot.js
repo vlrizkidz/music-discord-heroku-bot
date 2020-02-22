@@ -35,7 +35,7 @@ bot.login(process.env.BOT_TOKEN);
 //561285289507815424
 //561802892030377994
 
-client.once('ready', () => {
+client.on('ready', () => {
 	console.log('Ready Cuy!');
 });
 
