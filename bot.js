@@ -69,7 +69,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
             .setColor("#FFF")
             .addField('.............................................', `${user} is now ${stat}`);
     guildChannels.find('name', 'nothing')
-        .send(botembed);
+        .send('botembed');
         userStatus = [];
 });    
 
