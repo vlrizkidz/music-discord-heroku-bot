@@ -36,11 +36,11 @@ bot.login(process.env.BOT_TOKEN);
 //561802892030377994
 
 
-module.exports = async (oldState, newState, message) => {
+module.exports = async (oldMember, newMember, message) => {
     if(newState.user.bot) return;
-    let newUserChannel = newState.voiceChannel
-    let oldUserChannel = oldState.voiceChannel
-    console.log(oldUser,newUser);
+    let newUserChannel = newMember.voiceChannel
+    let oldUserChannel = newMember.voiceChannel
+    console.log(oldMember,newMember);
 
     let newdate = new Date(newState.joinedTimestamp)
 
