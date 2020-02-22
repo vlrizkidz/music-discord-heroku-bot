@@ -34,19 +34,18 @@ bot.login(process.env.BOT_TOKEN);
 //561285183039602696
 //561285289507815424
 //561802892030377994
-client.on("message", function(message) {
- bot.on('voiceStateUpdate', (oldMember, newMember) => {
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel
   let oldUserChannel = oldMember.voiceChannel
   var channel = client.channels.get('572351018189324299');
 
   if(oldUserChannel === undefined && newUserChannel !== undefined) {
 
-message.channel.send('has joined a voice channel');
+    message.channel.send('has joined a voice channel');
 
   } else if(newUserChannel === undefined){
 
-message.channel.send('has leave a voice channel');
+    message.channel.send('has leave a voice channel');
 
   }
 })
