@@ -39,7 +39,7 @@ bot.music.start(bot, {
 //})
 
 module.exports = async (oldMember,newMember,message) => {
-
+console.log(oldMember,newMember,message);
     if(newMember.user.bot) return;
     let newUserChannel = newMember.voiceChannel
     let oldUserChannel = oldMember.voiceChannel
