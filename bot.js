@@ -25,8 +25,10 @@ bot.music.start(bot, {
 
 // Joins the voice channel as soon as the client starts up 
 client.on('ready', () => { 
-// Get the channel via ID let channel = client.channels.get('561245349818269696'); 
-// Or via name (less persistent) channel = client.channels.find('name', 'music'); 
+// Get the channel via ID 
+let channel = client.channels.get('561245349818269696'); 
+// Or via name (less persistent) 
+channel = client.channels.find('name', 'music'); 
 channel.join() .then(connection => console.log('Connected')) .catch(console.error); }); 
 client.on('message', message => { //... });
 
