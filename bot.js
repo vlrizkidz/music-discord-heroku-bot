@@ -69,7 +69,7 @@ async function statuscheck() {
     return statusArray;
 }
 bot.on('ready', async bot => {
-    setInterval(() => statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
+    setInterval(await statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
 });
 
 
