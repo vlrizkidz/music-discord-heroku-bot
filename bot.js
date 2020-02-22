@@ -68,7 +68,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
         let botembed = new Discord.RichEmbed()
             .setDescription("Status Update")
             .setColor("#FFF")
-            .addField('.............................................', `${username} is now ${status}`);
+            .addField('.............................................', `${user} is now ${stat}`);
 
         channel.send(botembed);
 
