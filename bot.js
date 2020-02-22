@@ -38,25 +38,20 @@ bot.music.start(bot, {
 //   console.log(`${client.user.username} is up and running!`);
 //})
 
-module.exports = async (oldMember,newMember,message) => {
-console.log(oldMember,newMember,message);
-    if(newMember.user.bot) return;
-    let newUserChannel = newMember.voiceChannel
-    let oldUserChannel = oldMember.voiceChannel
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+  let newUserChannel = newMember.voiceChannel 
+  let oldUserChannel = oldMember.voiceChannel
 
-    let newdate = new Date(newMember.joinedTimestamp)
-
-    var log =  message.guild.channels.find(ch => ch.name.includes('nothing'));
-
-    if(oldUserChannel === undefined && newUserChannel !== undefined) {
-        log.send(`:small_red_triangle_down: <@${newMember.user.id}> Left a voice channel at ${newdate}`); 
-    } else if(newUserChannel === undefined){
-        log.send(`:white_check_mark: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
-    }else if(oldUserChannel !== newUserChannel){
-        log.send(`:arrow_right: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
-    }
-
-    }
+  if (oldUserChannel === undefined && newUserChannel !== undefined) {
+  var currentdate = new Date(); 
+    currentdate
+console.log(currentdate)
+  } else if(newUserChannel === undefined) {
+  var currentdate = new Date(); 
+    currentdate
+console.log(currentdate)
+  }
+});
 
 
 
