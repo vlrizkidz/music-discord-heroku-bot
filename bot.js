@@ -23,15 +23,15 @@ bot.music.start(bot, {
 //    console.log(`${bot.user.username} is Ready!`);
 //});
 
-bot.on("ready", () => {
-  const channel = bot.channels.get("665123932881551360");
-  if (!channel) return console.error("The channel does not exist!");
-  channel.join().then(connection => {
-    console.log("Successfully connected Voice Channel");
-  }).catch(e => {
-    console.error(e);
-  });
-});
+//bot.on("ready", () => {
+//  const channel = bot.channels.get("665123932881551360");
+//  if (!channel) return console.error("The channel does not exist!");
+//  channel.join().then(connection => {
+//    console.log("Successfully connected Voice Channel");
+//  }).catch(e => {
+//   console.error(e);
+//  });
+//});
 
 //bot.on('ready', () => {
 //   bot.user.setPresence({ main de { name: 'with discord.js' }, status: 'idle' })
