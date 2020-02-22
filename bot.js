@@ -71,7 +71,7 @@ async function statuscheck() {
 
 bot.on('ready', async bot => {
     setInterval(await statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
-
+});
 
 
 
