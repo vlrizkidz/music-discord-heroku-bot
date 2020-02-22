@@ -61,13 +61,10 @@ let userStatus = [];
 bot.on("presenceUpdate", (oldMember, newMember) => {
     let username = newMember.user.username;
     let status = newMember.user.presence.status;
+    let guildChannels = newMember.guild.channels;
+    guildChannels.find('name', 'nothing')
     userStatus.push(username, status);
     console.log(`${newMember.user.username} is now ${newMember.user.presence.status}`);
-})
-
-bot.on('message', (message) => {
-    // if (!message.content.startsWith(prefix)) return;
-    if (console.log())
     let [username, status] = userStatus;
     if (message.content.startsWith(prefix + "status")) {
         let botembed = new Discord.RichEmbed()
@@ -79,9 +76,7 @@ bot.on('message', (message) => {
 
         userStatus = [];
     }
-});
-
-
+});    
 
 
 
