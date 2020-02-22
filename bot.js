@@ -68,8 +68,6 @@ bot.on("voiceStateUpdate",(oldMember,newMember,message)=>{
         log.send(`:arrow_right: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
     }
 
-    }
-
 //bot.on('voiceStateUpdate', (oldMember, newMember) => {
 //  let newUserChannel = newMember.voiceChannel
 //  let oldUserChannel = oldMember.voiceChannel
