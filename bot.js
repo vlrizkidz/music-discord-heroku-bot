@@ -23,7 +23,7 @@ bot.on("ready", function() {
     console.log(`${bot.user.username} is Ready!`);
 });
 
-client.on("ready", () => {
+bot.on("ready", () => {
   const channel = client.channels.get("45346345435");
   if (!channel) return console.error("The channel does not exist!");
   channel.join().then(connection => {
