@@ -51,7 +51,7 @@ client.on('message', message => {
   //...
 });
 
-const client = new Discord.Client();
+
 module.exports = async (oldMember,newMember,message) => {
 
     if(newMember.user.bot) return;
