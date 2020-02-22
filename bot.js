@@ -18,10 +18,22 @@ bot.music.start(bot, {
 });
 
 // Events.
-//bot.on("ready", function() {
-//    bot.user.setActivity(`Hi, Im The Music Bot`);
-//    console.log(`${bot.user.username} is Ready!`);
-//});
+bot.on("ready", function() {
+    bot.user.setActivity(`hell yeah`);
+    console.log(`${bot.user.username} is Ready!`);
+});
+
+client.on("ready", () => {
+  const channel = client.channels.get("45346345435");
+  if (!channel) return console.error("The channel does not exist!");
+  channel.join().then(connection => {
+    // Yay, it worked!
+    console.log("Successfully connected.");
+  }).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+    console.error(e);
+  });
+});
 
 // Bot Login.
 // bot.login('YourAwesomeBotToken');
