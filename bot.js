@@ -28,7 +28,7 @@ client.on('ready', () => {
   // Get the channel via ID
   let channel = client.channels.get('5612453498269696');
   // Or via name (less persistent)
-  channel = client.channels.find('name', 'Music');
+  channel = client.channels.find('name', 'music');
 
   channel.join()
   .then(connection => console.log('Connected'))
