@@ -68,9 +68,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
 bot.on('message', (message) => {
     // if (!message.content.startsWith(prefix)) return;
     if (console.log())
-        let [username, status] = userStatus;
-    let guildChannels = newMember.guild.channels;
-    guildChannels.find('name', 'nothing')
+    let [username, status] = userStatus;
     if (message.content.startsWith(prefix + "status")) {
         let botembed = new Discord.RichEmbed()
             .setDescription("Status Update")
