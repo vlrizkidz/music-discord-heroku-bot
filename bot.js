@@ -62,14 +62,13 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let user = newMember.user.username;
     let stat = newMember.user.presence.status;
     let guildChannels = newMember.guild.channels;
-    guildChannels.find('name', 'nothing')
     userStatus.push(user, stat);
     console.log(`${newMember.user.username} is now ${newMember.user.presence.status}`);
         let botembed = new Discord.RichEmbed()
             .setDescription("Status Update")
             .setColor("#FFF")
             .addField('.............................................', `${user} is now ${stat}`);
-
+    guildChannels.find('name', 'nothing')
         .send(botembed);
         .catch(console.error)
         userStatus = [];
