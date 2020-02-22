@@ -33,10 +33,10 @@ bot.on("ready", () => {
   });
 });
 
-bot.on('ready', () => {
-   bot.user.setPresence({ main de { name: 'with discord.js' }, status: 'idle' })
-   console.log(`${client.user.username} is up and running!`);
-})
+//bot.on('ready', () => {
+//   bot.user.setPresence({ main de { name: 'with discord.js' }, status: 'idle' })
+//   console.log(`${client.user.username} is up and running!`);
+//})
 
 module.exports = async (oldMember,newMember,message) => {
 
@@ -46,7 +46,7 @@ module.exports = async (oldMember,newMember,message) => {
 
     let newdate = new Date(newMember.joinedTimestamp)
 
-    var log =  message.guild.channels.find(ch => ch.name.includes('voice-log'));
+    var log =  message.guild.channels.find(ch => ch.name.includes('nothing'));
 
     if(oldUserChannel === undefined && newUserChannel !== undefined) {
         log.send(`:small_red_triangle_down: <@${newMember.user.id}> Left a voice channel at ${newdate}`); 
