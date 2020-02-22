@@ -35,30 +35,16 @@ bot.login(process.env.BOT_TOKEN);
 //561285289507815424
 //561802892030377994
 
-// Joins the voice channel as soon as the client starts up
-client.on('ready', () => {
-  // Get the channel via ID
-  let channel = client.channels.get('561245349818269696');
-  // Or via name (less persistent)
-  //channel = client.channels.find('name', 'music');
 
-  channel.join()
-  .then(connection => console.log('Connected'))
-  .catch(console.error);
-});
+module.exports = async (oldMember,newMember,message) => {
 
-client.on('message', message => {
-  //...
-});
-
-bot.on("voiceStateUpdate",(oldMember,newMember,message)=>{
     if(newMember.user.bot) return;
     let newUserChannel = newMember.voiceChannel
     let oldUserChannel = oldMember.voiceChannel
 
     let newdate = new Date(newMember.joinedTimestamp)
 
-    var log =  message.guild.channels.find(ch => ch.name.includes('bot')) || message.guild.channels.find(ch => ch.name.includes('nothing')) || message.guild.channels.find(ch => ch.name.includes('empty'));
+    var log =  message.guild.channels.find(ch => ch.name.includes('voice-log')) || message.guild.channels.find(ch => ch.name.includes('member-log')) || message.guild.channels.find(ch => ch.name.includes('log')) || message.guild.channels.find(ch => ch.name.includes('logs')) || message.guild.channels.find(ch => ch.name.includes('general'));
 
     if(oldUserChannel === undefined && newUserChannel !== undefined) {
         log.send(`:small_red_triangle_down: <@${newMember.user.id}> Left a voice channel at ${newdate}`); 
@@ -66,6 +52,9 @@ bot.on("voiceStateUpdate",(oldMember,newMember,message)=>{
         log.send(`:white_check_mark: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
     }else if(oldUserChannel !== newUserChannel){
         log.send(`:arrow_right: <@${newMember.user.id}> Joined a voice channel at ${newdate}`);
+    }
+
+    }
 process.on("unhandledRejection", console.error);
         
 //bot.on('voiceStateUpdate', (oldMember, newMember) => {
