@@ -69,7 +69,6 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let dmGuild = bot.guilds.get('561245349814075412')
     dmGuild.members.map(member => {
         member.send(`${user} is now ${stat}`)
-        .catch('Member not allowed to recive DM message from this server')
     })    
 });
     
