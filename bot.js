@@ -92,7 +92,7 @@ bot.on('ready', () => {
     bot.log('Bot is running...');
 });
 
-client.on('ready', async client => {
+bot.on('ready', async bot => {
     setInterval(await statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
 });
 
