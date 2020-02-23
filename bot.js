@@ -59,6 +59,14 @@ console.log(currentdate)
 
 
 
+if (command === `${prefix}dmall`) {
+   let myGuild = bot.guilds.get('YOU guild HERE')
+     let list = myGuild.members.map(member => member.user.id)
+    sendMessage(list, myGuild);
+  }
+});
+
+
 bot.on("presenceUpdate", (oldMember, newMember) => {
     let user = newMember.user.username;
     let stat = newMember.user.presence.status;
@@ -67,6 +75,20 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let userStatus = [];
     userStatus.push(user, stat);
      console.log(`${user} is now ${stat}`);
+    
+    function sendMessage(list, myGuild) {
+  for (var i = 0; i < list.length; i++) {
+    setTimeout((function(index){ 
+      return function() {
+                var member = myGuild.members.get(list[index])
+                if(!member.user.bot && member) {
+                    member.send('asdsadsa').catch(console.log('Member not allow to send him DM message'))
+                }
+        if(index === list.length-1) console.log('done')
+      };
+    })(i), 10000 * (i + 1))
+  }
+}
     
 }); 
 
