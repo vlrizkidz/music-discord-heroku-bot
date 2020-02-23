@@ -67,8 +67,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let userStatus = [];
     userStatus.push(user, stat);
      console.log(`${user} is now ${stat}`);
-    textChannel.send(`${user} is now ${stat}`);
-        userStatus = [];
+    
 }); 
 
 
