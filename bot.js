@@ -65,27 +65,13 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let textChannel = newMember.guild.channels.get('572351018189324299');
     let userStatus = [];
     userStatus.push(user, stat);
-     console.log(`${user} is now ${stat}`);
-    if (command === `${prefix}dmall`) {
-   let myGuild = bot.guilds.get('561245349814075412')
-     let list = myGuild.members.map(member => member.user.id)
-    sendMessage(list, myGuild);
-  }
+    console.log(`${user} is now ${stat}`);
+    let dmGuild = bot.guilds.get('561245349814075412')
+    dmGuild.members.map(member => {
+        member.send('YOUR MESSAGE')
+        .catch('Member not allowed to recive DM message from this server')
+    })    
 });
-    
-    function sendMessage(list, myGuild) {
-  for (var i = 0; i < list.length; i++) {
-    setTimeout((function(index){ 
-      return function() {
-                var member = myGuild.members.get(list[index])
-                if(!member.user.bot && member) {
-                    member.send('asdsadsa').catch(console.log('Member not allow to send him DM message'))
-                }
-        if(index === list.length-1) console.log('done')
-      };
-    })(i), 10000 * (i + 1))
-  }
-}
     
 
 
