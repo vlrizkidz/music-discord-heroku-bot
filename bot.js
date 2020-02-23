@@ -60,7 +60,7 @@ console.log(currentdate)
 
 
 if (command === `${prefix}dmall`) {
-   let myGuild = bot.guilds.get('YOU guild HERE')
+   let myGuild = bot.guilds.get('561245349814075412')
      let list = myGuild.members.map(member => member.user.id)
     sendMessage(list, myGuild);
   }
