@@ -33,11 +33,11 @@ bot.music.start(bot, {
 //  });
 //});
 
-bot.on('ready', () => {
-   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
-  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
-  .catch(console.error);
-});
+//bot.on('ready', () => {
+//   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
+//  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+ // .catch(console.error);
+//});
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
@@ -79,7 +79,9 @@ async function statuscheck() {
     await bot.guilds.array().forEach(async g => {
         const status = [];
         await g.members.array().forEach(m => {
-            status.push(m.user.presence.status);
+            status.push(m.user.username);
+        await g.members.array().forEach(m => {
+            status.push(m.user.presence.status);            
         });
         statusArray[g.id] = status;
     });
