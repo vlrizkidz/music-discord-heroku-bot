@@ -79,7 +79,8 @@ async function statuscheck() {
     await bot.guilds.array().forEach(async g => {
         const status = [];
         await g.members.array().forEach(m => {
-            status.push(m.user.username);       
+            status.push(m.user.username);
+            status.push(m.user.presence.status);
         });
         statusArray[g.id] = status;
     });
