@@ -58,13 +58,13 @@ console.log(currentdate)
 });
 
 
-//let userStatus = [];
 
 bot.on("presenceUpdate", (oldMember, newMember) => {
     let user = newMember.user.username;
     let stat = newMember.user.presence.status;
     let guildChannels = newMember.guild.channels;
     let textChannel = oldMember.guild.channels.get('572351018189324299');
+    let userStatus = [];
     userStatus.push(user, stat);
      console.log(`${user} is now ${stat}`);
     textChannel.send(`${user} is now ${stat}`);
