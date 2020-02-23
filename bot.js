@@ -87,7 +87,6 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
   }
 }
     
-}); 
 
 
 
