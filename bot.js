@@ -33,11 +33,11 @@ bot.music.start(bot, {
 //  });
 //});
 
-//bot.on('ready', () => {
-//   bot.user.setPresence({ main de { name: 'with discord.js' }, status: 'idle' })
-//   console.log(`${client.user.username} is up and running!`);
-//})
+bot.on('ready', () => {
+   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' }, status: 'online' })
+   console.log(`${client.user.username} is up and running!`);
 
+  bot.user.setActivity('a game', { type: 'PLAYING' })
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
   let oldUserChannel = oldMember.voiceChannel
