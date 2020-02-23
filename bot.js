@@ -37,7 +37,6 @@ bot.on('ready', () => {
    bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' }, status: 'online' })
    console.log(`${client.user.username} is up and running!`);
 
-  bot.user.setActivity('a game', { type: 'PLAYING' })
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
   let oldUserChannel = oldMember.voiceChannel
@@ -75,22 +74,23 @@ console.log(currentdate)
 
 async function statuscheck() {
     const statusArray = {};
-    await client.guilds.array().forEach(async g => {
+    await bot.guilds.array().forEach(async g => {
         const status = [];
         await g.members.array().forEach(m => {
             status.push(m.user.presence.status);
         });
-        //statusArray[g.id] = status;
-    //});
+        statusArray[g.id] = status;
+    });
     console.log('set'); // /So I know the timer works
     return statusArray;
+}
 
 
 bot.on('ready', () => {
-    console.log('Bot is running...');
+    bot.log('Bot is running...');
 });
 
-bot.on('ready', async client => {
+client.on('ready', async client => {
     setInterval(await statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
 });
 
