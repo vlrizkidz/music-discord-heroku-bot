@@ -34,7 +34,7 @@ bot.music.start(bot, {
 //});
 
 bot.on('ready', () => {
-   user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
+   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
   .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
   .catch(console.error);
 });
