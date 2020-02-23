@@ -89,7 +89,7 @@ async function statuscheck() {
 
 
 bot.on('ready', () => {
-    bot.log('Bot is running...');
+    console.log('Bot is running...');
 });
 
 bot.on('ready', async bot => {
