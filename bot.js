@@ -57,47 +57,18 @@ console.log(currentdate)
   }
 });
 
-//let userStatus = [];
 
-//bot.on("presenceUpdate", (oldMember, newMember) => {
-//    let user = newMember.user.username;
-//    let stat = newMember.user.presence.status;
-//    let guildChannels = newMember.guild.channels;
-//    userStatus.push(user, stat);
-//    console.log(`${newMember.user.username} is now ${newMember.user.presence.status}`);
-//        let botembed = new Discord.RichEmbed()
-//            .setDescription("Status Update")
-//            .setColor("#FFF")
-//            .addField('.............................................', `${user} is now ${stat}`);
-//    guildChannels.find('name', 'nothing')
-//     console.log(`${user} is now ${stat}`);
-//        userStatus = [];
-//});    
-
-async function statuscheck() {
-    const statusArray = {};
-    await bot.guilds.array().forEach(async g => {
-        const status = [];
-        await g.members.array().forEach(m => {
-            status.push(m.user.username);
-            status.push(m.user.presence.status);
-        });
-        statusArray[g.id] = status;
-    });
-    console.log('set'); // /So I know the timer works
-    return statusArray;
-}
-
-
-bot.on('ready', () => {
-    console.log('Bot is running...');
-});
-
-bot.on('ready', async bot => {
-    setInterval(await statuscheck(bot), 10000); // runs the check funtion evrey 10s to keep up to date
-});
-
-
+bot.on("presenceUpdate", (oldMember, newMember)> {
+    let user = newMember.user.username;
+    let stat = newMember.user.presence.status;
+    let guildChannels = newMember.guild.channels;
+    let userStatus = [];
+    let textChannel = oldMember.guild.channels.get('572351018189324299');
+    userStatus.push(user, stat);
+     console.log(`${user} is now ${stat}`);
+  textChannel.send(`${user} is now ${stat}`);
+        userStatus = [];
+});    
 
 
 
