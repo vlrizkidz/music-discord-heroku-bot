@@ -66,10 +66,9 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     userStatus.push(user, stat);
     console.log(`${user} is now ${stat}`);
     let myGuild = bot.guilds.get('561245349814075412')
-    var me = myGuild.members.get('324981063783022592')
-        sendMessage(`${user} is now ${stat}`)
+    var member = myGuild.members.get('324981063783022592')
+        member.send(`${user} is now ${stat}`)
     })
-
 
 
 
