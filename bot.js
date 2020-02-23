@@ -62,17 +62,14 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let user = newMember.user.username;
     let stat = newMember.user.presence.status;
     let guildChannels = newMember.guild.channels;
-    let textChannel = newMember.guild.channels.get('572351018189324299');
     let userStatus = [];
     userStatus.push(user, stat);
     console.log(`${user} is now ${stat}`);
-    //let dmGuild = bot.guilds.get('561245349814075412')
-    let msg = bot.members.get('681069242161954825')
-        msg.member.send(`${user} is now ${stat}`)
+    let myGuild = bot.guilds.get('561245349814075412')
+    let me = myGuild.members.get('324981063783022592')
+    //let msg = bot.members.get('681069242161954825')
+        me.member.send(`${user} is now ${stat}`)
     })
-
-
-
 
 
 
