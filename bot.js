@@ -70,7 +70,6 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     var member = myGuild.members.get('681069242161954825')
         member.send(`${user} is now ${stat}`)
     })
-});
 
 
 
