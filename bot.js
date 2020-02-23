@@ -33,9 +33,9 @@ bot.music.start(bot, {
 //  });
 //});
 
-bot.on('ready', () => {
-   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' }, status: 'online' })
-   console.log(`${client.user.username} is up and running!`);
+bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
+  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+  .catch(console.error);
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
