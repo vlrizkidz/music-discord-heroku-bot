@@ -45,13 +45,16 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let textChannel = oldMember.guild.channels.get('572351018189324299');
   if (!textChannel) throw new Error("That channel does not exist.");
   if (oldUserChannel === undefined && newUserChannel !== undefined) {
+  let myGuild = bot.guilds.get('561245349814075412')
   var currentdate = new Date(); 
+  var member = myGuild.members.get('324981063783022592')
+  member.send(`${newMember} has join the voice channel.`))
       currentdate
-  textChannel.send(`${newMember} has joined the voice channel.`);
 console.log(currentdate)
   } if(newUserChannel === undefined) {
-  var currentdate = new Date(); 
-      textChannel.send(`${newMember} has left the voice channel.`);
+  var currentdate = new Date();
+  var member = myGuild.members.get('324981063783022592')
+  member.send(`${newMember} has left the voice channel.`))  
       currentdate
 console.log(currentdate)
   }
@@ -67,7 +70,8 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     console.log(`${user} is now ${stat}`);
     let myGuild = bot.guilds.get('561245349814075412')
     var member = myGuild.members.get('324981063783022592')
-        member.send(`${user} is now ${stat}`)
+        //member.send(`${user} is now ${stat}`)
+          member.send(`${user} is now ${stat}`)
     })
 
 
