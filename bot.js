@@ -42,8 +42,10 @@ bot.music.start(bot, {
 //});
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
-  let channel = newMember.voiceChannel 
+  let enter = newMember.voiceChannel 
   channel.join().then(connection => console.log('Connected!'))
+  let out = oldMember.voiceChannel
+  out.leave()
 });
       
       
