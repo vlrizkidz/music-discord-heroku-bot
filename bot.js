@@ -45,10 +45,10 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
       dispatcher.on('start', () => {
           });
       dispatcher.on('end', end => {
+          console.log("End: " + end);
           })
       })
     }
-          newMember.leave()
 })
                 
       
