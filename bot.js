@@ -44,8 +44,8 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
 dispatcher.on('end', () => {
   })
   })
-      out.leave()
   }
+          out.leave()
       if(enter === undefined) {
   out.leave()
           }
