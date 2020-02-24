@@ -46,11 +46,11 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let out = oldMember.voiceChannel
   if (out === undefined && enter !== undefined) {
   enter.join().then(connection => {
-        console.log("joined channel");
+      console.log("joined channel");
       let dispatcher = connection.playStream(ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', {
-              filter: 'audioonly',
-              quality: 'highestaudio'
-            });
+          filter: 'audioonly',
+          quality: 'highestaudio'
+          })
             dispatcher.on("end", end => {
                 console.log("left channel");
                 out.leave();
