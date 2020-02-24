@@ -46,7 +46,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     console.log("Playing");
     }); 
     dispatcher.on("end", function() {
-            connection.disconnect();
+    connection.disconnect();
     })
     })
     }
