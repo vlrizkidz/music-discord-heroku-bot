@@ -66,7 +66,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     var member = myGuild.members.get('324981063783022592')
     var embed = new Discord.RichEmbed()
     .setTitle("Login")
-    .setDescription("'<${user}> is now '<${stat}>'") /** ruser declares the user that was removed. **/
+    .setDescription("'<${newMember.user.username}> is now '<${newMember.user.presence.status}>'") /** ruser declares the user that was removed. **/
     .setColor("#3937a5")
           member.send(embed)
     })
