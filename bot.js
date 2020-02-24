@@ -42,8 +42,6 @@ bot.on('ready', () => {
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
   let oldUserChannel = oldMember.voiceChannel
-  let textChannel = oldMember.guild.channels.get('572351018189324299');
-  if (!textChannel) throw new Error("That channel does not exist.");
   if (oldUserChannel === undefined && newUserChannel !== undefined) {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
