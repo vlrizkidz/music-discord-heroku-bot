@@ -27,11 +27,13 @@ bot.music.start(bot, {
 //  });
 //});
 
-//bot.on('ready', () => {
+bot.on('ready', () => {
 //   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
+bot.user.setStatus('idle')
 //  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
 //  .catch(console.error);
 //});
+
 
 
 //bot.on('voiceStateUpdate', (oldMember, newMember) => {
