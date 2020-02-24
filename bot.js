@@ -41,20 +41,20 @@ bot.music.start(bot, {
 //  .catch(console.error);
 //});
 
-bot.on('voiceStateUpdate', (oldMember, newMember) => {
-  let enter = newMember.voiceChannel
-  let out = oldMember.voiceChannel
-  if (out === undefined && enter !== undefined) {
-  enter.join().then(connection => {
-      console.log("joined channel");
-    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
-    const dispatcher = connection.playStream(stream, streamOptions)
-    })
-  }
-      if(enter === undefined) {
-  out.leave()
-      }
-});
+//bot.on('voiceStateUpdate', (oldMember, newMember) => {
+//  let enter = newMember.voiceChannel
+//  let out = oldMember.voiceChannel
+/  if (out === undefined && enter !== undefined) {
+//  enter.join().then(connection => {
+//      console.log("joined channel");
+//    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
+//    const dispatcher = connection.playStream(stream, streamOptions)
+//})
+//}
+//      if(enter === undefined) {
+//  out.leave()
+//}
+//});
       
 //voice channel log      
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
