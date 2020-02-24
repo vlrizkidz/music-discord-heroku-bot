@@ -69,6 +69,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     .setColor("#3937a5")
     .addField("Username", `<@${user}>`, true)
     .addField("Status", `<@${stat}>`, true)
+    .setTimestamp()
           member.send(embed)
     })
 
