@@ -26,7 +26,7 @@ bot.music.start(bot, {
 //});
 
 bot.on("ready", () => {
-  const channel = bot.channels.get("561285183039602696");
+  const channel = bot.channels.get("561245349818269696");
   if (!channel) return console.error("The channel does not exist!");
   channel.join().then(connection => {
     console.log("Successfully connected Voice Channel");
