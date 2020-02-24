@@ -50,6 +50,8 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
     const dispatcher = connection.playStream(stream, streamOptions)
     };
+                    )
+      
       if(enter === undefined) {
   out.leave()
       }
