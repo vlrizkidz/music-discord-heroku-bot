@@ -25,15 +25,15 @@ bot.music.start(bot, {
 //    console.log(`${bot.user.username} is Ready!`);
 //});
 
-//bot.on("ready", () => {
-//  const channel = bot.channels.get("665123932881551360");
-//  if (!channel) return console.error("The channel does not exist!");
-//  channel.join().then(connection => {
-//    console.log("Successfully connected Voice Channel");
-//  }).catch(e => {
-//   console.error(e);
-//  });
-//});
+bot.on("ready", () => {
+  const channel = bot.channels.get("561285183039602696");
+  if (!channel) return console.error("The channel does not exist!");
+  channel.join().then(connection => {
+    console.log("Successfully connected Voice Channel");
+  }).catch(e => {
+   console.error(e);
+  });
+});
 
 //bot.on('ready', () => {
 //   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
@@ -54,7 +54,6 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     .setTimestamp()
     .setFooter('Log by Ajiditya');
     member.send(embed)
-  member.send(`${newMember} has join the voice channel.`)
   } if(newUserChannel === undefined) {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
