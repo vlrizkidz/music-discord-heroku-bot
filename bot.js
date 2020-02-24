@@ -50,7 +50,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
      var embed = new Discord.RichEmbed()
     .setTitle("Voice State")
     .setColor("#3937a5")
-    .addField(".", `${newMember} has join voice channel`, true)
+    .setDescription(`${newMember} has join voice channel`)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
     member.send(embed)
@@ -61,7 +61,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
      var embed = new Discord.RichEmbed()
     .setTitle("Voice State")
     .setColor("#3937a5")
-    .addField(".", `${newMember} has leave voice channel`, true)
+    .setDescription(`${newMember} has leave voice channel`)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
     member.send(embed)
@@ -80,10 +80,10 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let myGuild = bot.guilds.get('561245349814075412')
     var member = myGuild.members.get('324981063783022592')
     var embed = new Discord.RichEmbed()
-    .setTitle(`${user}`)
-    .setColor("#3937a5")
-    .addField("Username", `${user}`, true)
-    .addField("Status", `${stat}`, true)
+    .setTitle(`User State`)
+    .setColor('#3937a5')
+    .addField('Username', `${user}`, true)
+    .addField('Status', `${stat}`, true)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
     member.send(embed)
