@@ -25,21 +25,32 @@ bot.music.start(bot, {
 //    console.log(`${bot.user.username} is Ready!`);
 //});
 
-bot.on("ready", () => {
-  const channel = bot.channels.get("561245349818269696");
-  if (!channel) return console.error("The channel does not exist!");
-  channel.join().then(connection => {
-    console.log("Successfully connected Voice Channel");
-  }).catch(e => {
-   console.error(e);
-  });
-});
+//bot.on("ready", () => {
+//  const channel = bot.channels.get("561245349818269696");
+//  if (!channel) return console.error("The channel does not exist!");
+//  channel.join().then(connection => {
+//    console.log("Successfully connected Voice Channel");
+//  }).catch(e => {
+//   console.error(e);
+//  });
+//});
 
 //bot.on('ready', () => {
 //   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
 //  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
 //  .catch(console.error);
 //});
+
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+  let newUserChannel = newMember.voiceChannel 
+  let oldUserChannel = oldMember.voiceChannel
+  if (oldUserChannel === undefined && newUserChannel !== undefined) {
+    newUserChannel.channel.join().then(connection => {
+    console.log("Successfully connected Voice Channel");
+    }).catch(e => {
+    console.error(e);
+  });
+});
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
