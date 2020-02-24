@@ -49,7 +49,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   enter.join().then(connection => console.log('Connected!'))
       } if(enter === undefined) {
   out.leave()
-});
+};
       
       
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
