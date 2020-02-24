@@ -32,28 +32,28 @@ bot.on('ready', () => {
 bot.user.setStatus('idle')
 //  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
 //  .catch(console.error);
-//});
+});
 
 
 
-//bot.on('voiceStateUpdate', (oldMember, newMember) => {
-//  let enter = newMember.voiceChannel
-//  let out = oldMember.voiceChannel
-//  if (out === undefined && enter !== undefined) {
-//  enter.join().then(connection => {
-//    console.log("joined channel");
-//   const stream = ytdl('https://www.youtube.com/watch?v=gWbfOuHGfDY', { filter : 'audioonly', quality: 'highestaudio' })
-//    const dispatcher = connection.playStream(stream, streamOptions)
-//    dispatcher.on('start', () => {
-//                console.log("Playing")
-//            })
-//dispatcher.on("end", function() {
-//          console.log("left channel");
-//    connection.disconnect()
-//})
-//})
-//}    
-//})    
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+  let enter = newMember.voiceChannel
+  let out = oldMember.voiceChannel
+  if (out === undefined && enter !== undefined) {
+  enter.join().then(connection => {
+    console.log("joined channel");
+   const stream = ytdl('https://www.youtube.com/watch?v=gWbfOuHGfDY', { filter : 'audioonly', quality: 'highestaudio' })
+    const dispatcher = connection.playStream(stream, streamOptions)
+    dispatcher.on('start', () => {
+                console.log("Playing")
+            })
+dispatcher.on("end", function() {
+          console.log("left channel");
+    connection.disconnect()
+})
+})
+}    
+})    
    
       
 //voice channel log      
