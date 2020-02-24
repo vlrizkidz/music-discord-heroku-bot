@@ -46,9 +46,9 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
   var embed = new Discord.RichEmbed()
-    .setTitle("Login")
+    .setTitle("VoiceState")
     .setColor("#3937a5")
-    .addField("Username", `${newMember} has join the voice channel', true)
+    .addField("Enter Voice", `${newMember}', true)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
           member.send(embed)
@@ -56,9 +56,9 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
   var embed = new Discord.RichEmbed()
-    .setTitle("Login")
+    .setTitle("VoiceState")
     .setColor("#3937a5")
-    .addField("Username", `${newMember} has leave the voice channel', true)
+    .addField("Leave Voice", '${newMember}', true)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
           member.send(embed)
