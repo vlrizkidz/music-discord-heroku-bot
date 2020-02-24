@@ -47,6 +47,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             })
 dispatcher.on("end", function() {
           console.log("left channel");
+    connection.disconnect()
 })
 })
 }    
