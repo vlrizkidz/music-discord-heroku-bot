@@ -43,8 +43,8 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     const dispatcher = connection.playStream(stream, streamOptions)
 dispatcher.on('end', () => {
   })
-      out.leave()
   })
+      out.leave()
   }
       if(enter === undefined) {
   out.leave()
