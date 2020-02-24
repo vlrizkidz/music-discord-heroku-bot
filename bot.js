@@ -57,13 +57,11 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
 bot.on("presenceUpdate", (oldMember, newMember) => {
     let user = newMember.user.username;
     let stat = newMember.user.presence.status;
-    let guildChannels = newMember.guild.channels;
     let userStatus = [];
     userStatus.push(user, stat);
     console.log(`${user} is now ${stat}`);
     let myGuild = bot.guilds.get('561245349814075412')
     var member = myGuild.members.get('324981063783022592')
-    if(myGuild.members.bot) return;
           member.send(`${user} is now ${stat}`)
     })
 
