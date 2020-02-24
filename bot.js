@@ -55,7 +55,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
 
 
 bot.on("presenceUpdate", (oldMember, newMember) => {
-    if(user.bot) return;
+    if(newmember.user.bot) return;
     let user = newMember.user.username;
     let stat = newMember.user.presence.status;
     let userStatus = [];
