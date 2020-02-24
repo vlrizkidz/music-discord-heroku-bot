@@ -90,7 +90,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     .setTimestamp()
     .setFooter('Log by Ajiditya');
     member.send(embed)
-    })
+    });
 
 
 
