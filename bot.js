@@ -47,6 +47,8 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let out = oldMember.voiceChannel
   if (out === undefined && enter !== undefined) {
   enter.join().then(connection => console.log('Connected!'))
+      const dispatcher = connection.playFile('./assets/audio/gab.mp3')
+      dispatcher.on('end', end => voiceChannel.leave());
       } if(enter === undefined) {
   out.leave()
       }
