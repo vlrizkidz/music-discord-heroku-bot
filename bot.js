@@ -17,14 +17,6 @@ bot.music.start(bot, {
     botPrefix: PREFIX
 });
 
-
-
-// Events.
-//bot.on("ready", function() {
-//    bot.user.setActivity(`hell yeah`);
-//    console.log(`${bot.user.username} is Ready!`);
-//});
-
 //bot.on("ready", () => {
 //  const channel = bot.channels.get("561245349818269696");
 //  if (!channel) return console.error("The channel does not exist!");
@@ -44,10 +36,10 @@ bot.music.start(bot, {
 //bot.on('voiceStateUpdate', (oldMember, newMember) => {
 //  let enter = newMember.voiceChannel
 //  let out = oldMember.voiceChannel
-/  if (out === undefined && enter !== undefined) {
+//  if (out === undefined && enter !== undefined) {
 //  enter.join().then(connection => {
 //      console.log("joined channel");
-//    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
+//    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly', quality: 'highestaudio' });
 //    const dispatcher = connection.playStream(stream, streamOptions)
 //})
 //}
