@@ -50,7 +50,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
      var embed = new Discord.RichEmbed()
     .setTitle("Voice State")
     .setColor("#3937a5")
-    .addField("join voice channel", `${newMember} join channel`, true)
+    .addField("", `${newMember} has join voice channel`, true)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
     member.send(embed)
@@ -61,7 +61,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
      var embed = new Discord.RichEmbed()
     .setTitle("Voice State")
     .setColor("#3937a5")
-    .addField("leave voice channel", `${newMember} leave channel`, true)
+    .addField("", `${newMember} has leave voice channel`, true)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
     member.send(embed)
@@ -75,7 +75,6 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let user = newMember.user.username;
     let stat = newMember.user.presence.status;
     let userStatus = [];
-    var date = new Date();
     userStatus.push(user, stat);
     console.log(`${user} is now ${stat}`);
     let myGuild = bot.guilds.get('561245349814075412')
