@@ -80,7 +80,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     let myGuild = bot.guilds.get('561245349814075412')
     var member = myGuild.members.get('324981063783022592')
     var embed = new Discord.RichEmbed()
-    .setTitle("User Status")
+    .setTitle(`${user}`)
     .setColor("#3937a5")
     .addField("Username", `${user}`, true)
     .addField("Status", `${stat}`, true)
