@@ -2,6 +2,7 @@ const Discord = require("discord.js"); // We Call The Packages.
 // const PREFIX = "<"; // You can change this Prefix to whatever you want.
 const PREFIX = process.env.PREFIX;
 const bot = new Discord.Client();
+const ytdl = require('ytdl-core');
 
 
 // Put the Music module in the new Client object.
