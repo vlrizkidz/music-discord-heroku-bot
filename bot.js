@@ -48,7 +48,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   var embed = new Discord.RichEmbed()
     .setTitle("Login")
     .setColor("#3937a5")
-    .addField("Username", `${newMember}` has join the voice channel, true)
+    .addField("Username", `${newMember}` has join the voice channel, false)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
           member.send(embed)
@@ -58,7 +58,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   var embed = new Discord.RichEmbed()
     .setTitle("Login")
     .setColor("#3937a5")
-    .addField("Username", `${newMember}` has leave the voice channel, true)
+    .addField("Username", `${newMember}` has leave the voice channel, false)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
           member.send(embed)
