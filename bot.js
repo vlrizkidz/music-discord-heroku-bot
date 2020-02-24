@@ -1,8 +1,8 @@
-const Discord = require("discord.js"); // We Call The Packages.
-// const PREFIX = "<"; // You can change this Prefix to whatever you want.
+const Discord = require("discord.js");
 const PREFIX = process.env.PREFIX;
 const bot = new Discord.Client();
 const ytdl = require('ytdl-core');
+const streamOptions = { seek: 0, volume: 1 };
 
 
 // Put the Music module in the new Client object.
@@ -45,9 +45,9 @@ bot.music.start(bot, {
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let enter = newMember.voiceChannel
   let out = oldMember.voiceChannel
-  const streamOptions = { seek: 0, volume: 1 };
   if (out === undefined && enter !== undefined) {
-  enter.join().then(connection => console.log('Connected!'))
+  enter.join().then(connection => {
+        console.log("joined channel");
             const stream = ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', { filter : 'audioonly' });
             const dispatcher = connection.playStream(stream, streamOptions);
             dispatcher.on("end", end => {
