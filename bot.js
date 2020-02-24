@@ -41,6 +41,8 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
       console.log("joined channel");
     const stream = ytdl('https://www.youtube.com/watch?v=gWbfOuHGfDY', { filter : 'audioonly', quality: 'highestaudio' });
     const dispatcher = connection.playStream(stream, streamOptions)
+dispatcher.on('end', () => {
+  })
   })
   }
       if(enter === undefined) {
