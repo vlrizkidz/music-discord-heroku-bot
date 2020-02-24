@@ -68,8 +68,6 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     .setTitle("Login")
     .setDescription("${user} is now ${stat}") /** ruser declares the user that was removed. **/
     .setColor("#3937a5")
-    .addField("Time assigned", message.createdAt, true)
-    .addField("Assigned by", `<@${message.author.id}>`, true)/
           member.send(embed)
     })
 
