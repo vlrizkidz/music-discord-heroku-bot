@@ -47,8 +47,9 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let out = oldMember.voiceChannel
   if (out === undefined && enter !== undefined) {
   enter.join().then(connection => console.log('Connected!'))
-      const dispatcher = connection.playFile('./assets/audio/gab.mp3')
-      dispatcher.on('end', end => voiceChannel.leave());
+            const stream = ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', { filter : 'audioonly' });
+            const dispatcher = connection.playStream(stream, streamOptions);
+            dispatcher.on("end", end => {
       } if(enter === undefined) {
   out.leave()
       }
