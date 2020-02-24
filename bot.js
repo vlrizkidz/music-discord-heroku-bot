@@ -44,7 +44,7 @@ bot.music.start(bot, {
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let channel = newMember.voiceChannel 
   channel.join().then(connection => console.log('Connected!'))
-  .catch(console.error);
+});
       
       
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
