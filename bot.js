@@ -44,11 +44,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     console.log("joined channel");
    const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
     const dispatcher = connection.playStream(stream, streamOptions)
-    dispatcher.on('start', () => {
-                console.log("Playing")
-            })
-    dispatcher.on('error', (err) => console.log(err));
-    dispatcher.on('end', end => {
+    dispatcher.on('end', () => {
           console.log("left channel");
     connection.disconnect()
 })
