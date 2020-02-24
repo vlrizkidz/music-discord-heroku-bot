@@ -69,10 +69,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     console.log(`${user} is now ${stat}`);
     let myGuild = bot.guilds.get('561245349814075412')
     var member = myGuild.members.get('324981063783022592')
-    embed.setTitle('Login')
-    embed.addField("Username", `${user}`, true)
-    embed.addField("Status", `${stat}`, true)
-    member.send(embed)
+    member.send({ embed: embed, title:Login, field:"Username", `${user}`, true, field:"Status", `${stat}`, true })
     })
 
 
