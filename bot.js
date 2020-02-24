@@ -47,6 +47,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     dispatcher.on('start', () => {
                 console.log("Playing")
             })
+    dispatcher.on('error', (err) => console.log(err));
     dispatcher.on('end', end => {
           console.log("left channel");
     connection.disconnect()
