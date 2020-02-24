@@ -50,7 +50,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
       let dispatcher = connection.playStream(ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', {
           filter: 'audioonly',
           quality: 'highestaudio'
-          }})
+          }))
             dispatcher.on("end", end => {
                 console.log("left channel");
                 out.leave();
