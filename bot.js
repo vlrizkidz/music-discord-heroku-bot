@@ -64,10 +64,14 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     console.log(`${user} is now ${stat}`);
     let myGuild = bot.guilds.get('561245349814075412')
     var member = myGuild.members.get('324981063783022592')
-          member.send(`${user} is now ${stat}.${date.toLocaleString()} `)
+    var embed = new discord.RichEmbed()
+    .setTitle("Login")
+    .setDescription("${user} is now ${stat}") /** ruser declares the user that was removed. **/
+    .setColor("#3937a5")
+    .addField("Time assigned", message.createdAt, true)
+    .addField("Assigned by", `<@${message.author.id}>`, true)/
+          member.send(embed)
     })
-
-
 
 
 
