@@ -44,12 +44,9 @@ bot.music.start(bot, {
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
   let oldUserChannel = oldMember.voiceChannel
-  if (oldUserChannel === undefined && newUserChannel !== undefined) {
-    newUserChannel.channel.join().then(connection => {
-    console.log("Successfully connected Voice Channel");
-    }).catch(e => {
-    console.error(e);
-  });
+  newUserChannel.channel.join().then(connection => {
+  console.log("Successfully connected Voice Channel");
+});
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
