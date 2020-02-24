@@ -48,7 +48,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
           })
       })
     }
-          out.leave()
+          out.disconnect()
 })
                 
       
