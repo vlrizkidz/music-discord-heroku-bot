@@ -42,16 +42,15 @@ bot.music.start(bot, {
 //});
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
-    
   let enter = newMember.voiceChannel
   let out = oldMember.voiceChannel
+  const streamOptions = { seek: 0, volume: 1 };
   if (out === undefined && enter !== undefined) {
   enter.join().then(connection => console.log('Connected!'))
             const stream = ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', { filter : 'audioonly' });
             const dispatcher = connection.playStream(stream, streamOptions);
             dispatcher.on("end", end => {
                 console.log("left channel");
-                voiceChannel.leave();
             })
       } if(enter === undefined) {
   out.leave()
