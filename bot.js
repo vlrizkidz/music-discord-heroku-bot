@@ -45,11 +45,23 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   if (oldUserChannel === undefined && newUserChannel !== undefined) {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
-  member.send(`${newMember} has join the voice channel.`)
+  var embed = new Discord.RichEmbed()
+    .setTitle("Login")
+    .setColor("#3937a5")
+    .addField("Username", `${newMember}` has join the voice channel, true)
+    .setTimestamp()
+    .setFooter('Log by Ajiditya');
+          member.send(embed)
   } if(newUserChannel === undefined) {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
-  member.send(`${newMember} has left the voice channel.`)
+  var embed = new Discord.RichEmbed()
+    .setTitle("Login")
+    .setColor("#3937a5")
+    .addField("Username", `${newMember}` has leave the voice channel, true)
+    .setTimestamp()
+    .setFooter('Log by Ajiditya');
+          member.send(embed)
   }
 });
 
@@ -67,9 +79,10 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     var embed = new Discord.RichEmbed()
     .setTitle("Login")
     .setColor("#3937a5")
-    .addField("Username", `<@${user}>`, true)
-    .addField("Status", `<@${stat}>`, true)
+    .addField("Username", `${user}`, true)
+    .addField("Status", `${stat}`, true)
     .setTimestamp()
+    .setFooter('Log by Ajiditya');
           member.send(embed)
     })
 
