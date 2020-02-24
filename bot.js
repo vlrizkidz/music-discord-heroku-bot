@@ -45,9 +45,9 @@ dispatcher.on('end', () => {
   })
   })
   }
-          out.leave()
+out.disconnect()
       if(enter === undefined) {
-  out.leave()
+out.leave()
           }
       })
       
