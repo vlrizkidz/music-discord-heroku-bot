@@ -50,6 +50,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     })
     })
     }
+    })
                 
       
 //voice channel log      
