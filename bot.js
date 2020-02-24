@@ -46,7 +46,6 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     const dispatcher = connection.playStream(stream, streamOptions)
     dispatcher.on('end', () => {
           console.log("left channel");
-    connection.disconnect()
 })
 })
 }    
