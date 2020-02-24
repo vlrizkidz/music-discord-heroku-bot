@@ -50,7 +50,6 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     }).catch(e => {
     console.error(e);
   });
-});
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
