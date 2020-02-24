@@ -48,8 +48,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   if (out === undefined && enter !== undefined) {
   enter.join().then(connection => console.log('Connected!'))
       } if(enter === undefined) {
-  out.leave()
-};
+  out.leave();
       
       
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
