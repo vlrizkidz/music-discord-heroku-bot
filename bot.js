@@ -2,10 +2,7 @@ const Discord = require("discord.js"); // We Call The Packages.
 // const PREFIX = "<"; // You can change this Prefix to whatever you want.
 const PREFIX = process.env.PREFIX;
 const bot = new Discord.Client();
-const embed = new Discord.RichEmbed()
-    .setColor("#3937a5")
-    .setTimestamp()
-    .setFooter('Log by Ajiditya');
+
 
 // Put the Music module in the new Client object.
 // This allows for easy access to all the modules
@@ -50,10 +47,24 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   if (oldUserChannel === undefined && newUserChannel !== undefined) {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
+     var embed = new Discord.RichEmbed()
+    .setTitle("Login")
+    .setColor("#3937a5")
+    .addField("join voice channel", `${newMember}`, true)
+    .setTimestamp()
+    .setFooter('Log by Ajiditya');
+    member.send(embed)
   member.send(`${newMember} has join the voice channel.`)
   } if(newUserChannel === undefined) {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
+     var embed = new Discord.RichEmbed()
+    .setTitle("Voice State")
+    .setColor("#3937a5")
+    .addField("leave voice channel", `${newMember}`, true)
+    .setTimestamp()
+    .setFooter('Log by Ajiditya');
+    member.send(embed)
   member.send(`${newMember} has left the voice channel.`)
   }
 });
@@ -69,7 +80,14 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
     console.log(`${user} is now ${stat}`);
     let myGuild = bot.guilds.get('561245349814075412')
     var member = myGuild.members.get('324981063783022592')
-    member.send({ embed: embed, title:Login, fields:"Username", `${user}`, true, fields:"Status", `${stat}`, true })
+    var embed = new Discord.RichEmbed()
+    .setTitle("Login")
+    .setColor("#3937a5")
+    .addField("Username", `${user}`, true)
+    .addField("Status", `${stat}`, true)
+    .setTimestamp()
+    .setFooter('Log by Ajiditya');
+    member.send(embed)
     })
 
 
