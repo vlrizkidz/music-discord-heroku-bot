@@ -50,7 +50,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
       } if(enter === undefined) {
   out.leave()
       }
-};
+});
       
       
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
