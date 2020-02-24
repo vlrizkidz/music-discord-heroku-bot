@@ -53,12 +53,12 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             dispatcher.on("end", end => {
                 console.log("left channel");
             })
-      } if(enter === undefined) {
+      }) if(enter === undefined) {
   out.leave()
       }
 });
       
-      
+//voice channel log      
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
   let oldUserChannel = oldMember.voiceChannel
@@ -85,7 +85,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   }
 });
 
-
+//online status log
 bot.on("presenceUpdate", (oldMember, newMember) => {
     if(newMember.user.bot) return;
     let user = newMember.user.username;
