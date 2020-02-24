@@ -48,10 +48,9 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   var embed = new Discord.RichEmbed()
     .setTitle("VoiceState")
     .setColor("#3937a5")
-    .addField("Enter Voice", `${newMember}', true)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
-          member.send(embed)
+          member.send({ embed: embed, field : ("Enter Voice", `${newMember}', true)  })
   } if(newUserChannel === undefined) {
   let myGuild = bot.guilds.get('561245349814075412')
   var member = myGuild.members.get('324981063783022592')
