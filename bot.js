@@ -42,10 +42,11 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     const stream = ytdl('https://www.youtube.com/watch?v=gWbfOuHGfDY', { filter : 'audioonly', quality: 'highestaudio' });
     const dispatcher = connection.playStream(stream, streamOptions)
 dispatcher.on('end', () => {
+console.log("left channel");
   })
   })
   }
-out.disconnect()
+out.leave()
       if(enter === undefined) {
 out.leave()
           }
