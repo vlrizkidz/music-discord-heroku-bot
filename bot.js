@@ -33,6 +33,7 @@ bot.music.start(bot, {
 //  .catch(console.error);
 //});
 
+
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let enter = newMember.voiceChannel
   let out = oldMember.voiceChannel
@@ -44,11 +45,10 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
       dispatcher.on('start', () => {
           });
       dispatcher.on('end', end => {
-          let out = oldMember.voiceChannel
-          out.leave()
           })
       })
     }
+          out.leave()
 })
                 
       
