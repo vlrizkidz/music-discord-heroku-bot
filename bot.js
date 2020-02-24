@@ -45,8 +45,11 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
   let oldUserChannel = oldMember.voiceChannel
   newUserChannel.channel.join().then(connection => {
-  console.log("Successfully connected Voice Channel");
-})
+    console.log("Successfully connected Voice Channel");
+  }).catch(e => {
+   console.error(e);
+  });
+});
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let newUserChannel = newMember.voiceChannel 
