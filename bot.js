@@ -48,9 +48,8 @@ dispatcher.on('start', () => {
 dispatcher.on("end", function() {
     connection.disconnect();
 })
-});
-}if(enter === undefined) {
-    out.leave()}
+})
+}    
 })    
    
       
