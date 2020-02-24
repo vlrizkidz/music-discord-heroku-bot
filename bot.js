@@ -50,6 +50,9 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             const stream = ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', { filter : 'audioonly' });
             const dispatcher = connection.playStream(stream, streamOptions);
             dispatcher.on("end", end => {
+                console.log("left channel");
+                voiceChannel.leave();
+            })
       } if(enter === undefined) {
   out.leave()
       }
