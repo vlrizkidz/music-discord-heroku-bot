@@ -53,7 +53,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             dispatcher.on("end", end => {
                 console.log("left channel");
             })
-      }) if(enter === undefined) {
+      if(enter === undefined) {
   out.leave()
       }
 });
