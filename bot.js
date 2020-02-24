@@ -40,16 +40,23 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   enter.join().then(connection => {
       console.log("joined channel");
     const stream = ytdl('https://www.youtube.com/watch?v=gWbfOuHGfDY', { filter : 'audioonly', quality: 'highestaudio' });
-    const dispatcher = connection.playStream(stream, streamOptions)
-dispatcher.on('end', () => {
-console.log("left channel");
-  })
-  })
-  }
-out.leave()
+    const dispatcher = connection.playStream(stream, streamOptions);
+       dispatcher.on('start', () => { //not working
+                dispatcher.setVolume(0.70);
+                console.log("Playing");
+            }); 
+
+            dispatcher.on('error', (err) => console.log(err)); //no errors
+
+            dispatcher.on('end', end => { //working fine
+                console.log("Finished");
+                console.log("End: " + end);
       if(enter === undefined) {
 out.leave()
           }
+      })
+      })
+      }
       })
       
 //voice channel log      
