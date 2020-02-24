@@ -4,8 +4,6 @@ const PREFIX = process.env.PREFIX;
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed()
     .setColor("#3937a5")
-    .addField("Username", `${user}`, true)
-    .addField("Status", `${stat}`, true)
     .setTimestamp()
     .setFooter('Log by Ajiditya');
 
