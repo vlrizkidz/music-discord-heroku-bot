@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const PREFIX = process.env.PREFIX;
 const bot = new Discord.Client();
 const ytdl = require('ytdl-core');
-
+const streamOptions = { seek: 0, volume: 1 };
 
 // Put the Music module in the new Client object.
 // This allows for easy access to all the modules
@@ -47,10 +47,9 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   if (out === undefined && enter !== undefined) {
   enter.join().then(connection => {
       console.log("joined channel");
-      let dispatcher = connection.playStream(ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', {
-          filter: 'audioonly',
-          quality: 'highestaudio'
-          }))
+    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
+    const dispatcher = connection.playStream(stream, streamOptions);
+  })
             dispatcher.on("end", end => {
                 console.log("left channel");
                 out.leave();
