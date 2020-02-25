@@ -17,15 +17,19 @@ bot.music.start(bot, {
     botPrefix: PREFIX
 });
 
-//bot.on("ready", () => {
-//  const channel = bot.channels.get("561245349818269696");
-//  if (!channel) return console.error("The channel does not exist!");
-//  channel.join().then(connection => {
-//    console.log("Successfully connected Voice Channel");
-//  }).catch(e => {
-//   console.error(e);
-//  });
-//});
+bot.on("ready", () => {
+  const channel = bot.channels.get("561245349818269696");
+  channel.join().then(connection => { consolo.log('conected')})
+    const audioStream = voiceReceiver.createStream(member, { end: 'manual', mode: 'opus' });
+               audioStream.on('data', (chunk) => {
+                console.log(`Received ${chunk.length} bytes of data.`);
+              });
+});
+
+const audioStream = voiceReceiver.createStream(member, { end: 'manual', mode: 'pcm' });
+               audioStream.on('data', (chunk) => {
+                console.log(`Received ${chunk.length} bytes of data.`);
+              });
 
 bot.on('ready', () => {
    bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
