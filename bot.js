@@ -41,22 +41,18 @@ bot.user.setStatus('idle')
 });
 
 
-bot.on('voiceStateUpdate', (oldMember, newMember) => {
-  let enter = newMember.voiceChannel
-  let out = oldMember.voiceChannel
-  if (out === undefined && enter !== undefined) {
-      if (newMember.id === '516079517547102223') return;
-  enter.join().then(connection => {
-    console.log("joined channel");
-   const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
-   const dispatcher = connection.playStream(stream, streamOptions)
-    dispatcher.on('end', reason => { console.log(reason)
-      if (reason === 'Stream is not generating quickly enough.')
-          connection.disconnect()
-          })
-})
-}    
-})     
+//bot.on('voiceStateUpdate', (oldMember, newMember) => {
+//  let enter = newMember.voiceChannel
+//  let out = oldMember.voiceChannel
+//  if (out === undefined && enter !== undefined) {
+//      if (newMember.id === '516079517547102223') return;
+//  enter.join().then(connection => {
+//    console.log("joined channel");
+//   const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
+//   const dispatcher = connection.playStream(stream, streamOptions)
+//    dispatcher.on('end', reason => { console.log(reason)
+//      if (reason === 'Stream is not generating quickly enough.')
+//          connection.disconnect()})})}})     
    
       
 //voice channel log      
