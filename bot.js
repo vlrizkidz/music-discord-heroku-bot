@@ -28,28 +28,28 @@ bot.music.start(bot, {
 //});
 
 bot.on('ready', () => {
-//   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
+   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
 bot.user.setStatus('idle')
-//  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
-//  .catch(console.error);
+  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+  .catch(console.error);
 });
 
 
 
-//bot.on('voiceStateUpdate', (oldMember, newMember) => {
-//  let enter = newMember.voiceChannel
-//  let out = oldMember.voiceChannel
-//  if (out === undefined && enter !== undefined) {
-//  enter.join().then(connection => {
-//    console.log("joined channel");
-//   const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
-//    const dispatcher = connection.playStream(stream, streamOptions)
-//    dispatcher.on('end', () => {
-//          console.log("left channel");
-//})
-//})
-//}    
-//})    
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+  let enter = newMember.voiceChannel
+  let out = oldMember.voiceChannel
+  if (out === undefined && enter !== undefined) {
+  enter.join().then(connection => {
+    console.log("joined channel");
+   const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
+   const dispatcher = connection.playStream(stream, streamOptions)
+    dispatcher.on('end', () => {
+          console.log("left channel");
+})
+})
+}    
+})    
    
       
 //voice channel log      
