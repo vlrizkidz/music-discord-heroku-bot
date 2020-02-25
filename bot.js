@@ -42,9 +42,9 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     console.log("joined channel");
    const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
    const dispatcher = connection.playStream(stream, streamOptions)
-    dispatcher.on('start', reason => {
-          console.log(reason);
-})
+    dispatcher.on('debug', reason => { console.log(reason)})
+      if (reason === 'Stream is not generating quickly enough.')
+          connection.disconnect()
 })
 }    
 })    
