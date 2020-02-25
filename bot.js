@@ -26,11 +26,6 @@ bot.music.start(bot, {
 //              });
 //});
 
-const audioStream = voiceReceiver.createStream(member, { end: 'manual', mode: 'pcm' });
-               audioStream.on('data', (chunk) => {
-                console.log(`Received ${chunk.length} bytes of data.`);
-              });
-
 bot.on('ready', () => {
    bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
 bot.user.setStatus('idle')
