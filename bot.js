@@ -37,6 +37,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
   let enter = newMember.voiceChannel
   let out = oldMember.voiceChannel
   if (out === undefined && enter !== undefined) {
+      if (newMember.id === '324981063783022592')
   enter.join().then(connection => {
     console.log("joined channel");
    const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
@@ -75,7 +76,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     .setFooter('Log by Ajiditya');
     member.send(embed)
   }
-});
+})
 
 //online status log
 bot.on("presenceUpdate", (oldMember, newMember) => {
