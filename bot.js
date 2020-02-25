@@ -17,23 +17,23 @@ bot.music.start(bot, {
     botPrefix: PREFIX
 });
 
-bot.on("ready", () => {
-  const channel = bot.channels.get("561245349818269696");
-  channel.join().then(connection => {
-      const receiver = connection.createReceiver();
-      connection.on('speaking', (user, speaking) => {
-          if (speaking) {
-              const audioStream = receiver.createPCMStream(user);
-              const outputStream = generateOutputFile(voiceChannel, user);
-              audioStream.pipe(outputStream);
-              outputStream.on("data", console.log);
-              audioStream.on('end', () => {
-              voiceChannel.leave();
-            });
-          }
-        });
-      })
-})
+//bot.on("ready", () => {
+//  const channel = bot.channels.get("561245349818269696");
+//  channel.join().then(connection => {
+//      const receiver = connection.createReceiver();
+//      connection.on('speaking', (user, speaking) => {
+//          if (speaking) {
+//              const audioStream = receiver.createPCMStream(user);
+//              const outputStream = generateOutputFile(voiceChannel, user);
+//              audioStream.pipe(outputStream);
+//              outputStream.on("data", console.log);
+//              audioStream.on('end', () => {
+//              voiceChannel.leave();
+//            });
+//          }
+//        });
+//      })
+//})
 
 bot.on('ready', () => {
    bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
@@ -41,18 +41,18 @@ bot.user.setStatus('idle')
 });
 
 
-//bot.on('voiceStateUpdate', (oldMember, newMember) => {
-//  let enter = newMember.voiceChannel
-//  let out = oldMember.voiceChannel
-//  if (out === undefined && enter !== undefined) {
-//      if (newMember.id === '516079517547102223') return;
-//  enter.join().then(connection => {
-//    console.log("joined channel");
-//   const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
-//   const dispatcher = connection.playStream(stream, streamOptions)
-//    dispatcher.on('end', reason => { console.log(reason)
-//      if (reason === 'Stream is not generating quickly enough.')
-//          connection.disconnect()})})}})     
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+    let enter = newMember.voiceChannel
+  let out = oldMember.voiceChannel
+  if (out === undefined && enter !== undefined) {
+      if (newMember.id === '516079517547102223') return;
+  enter.join().then(connection => {
+    console.log("joined channel");
+   const stream = ytdl('https://www.youtube.com/watch?v=T9Cwqc2Z4EQ', { filter : 'audioonly', quality: 'highestaudio' })
+   const dispatcher = connection.playStream(stream, streamOptions)
+    dispatcher.on('end', reason => { console.log(reason)
+      if (reason === 'Stream is not generating quickly enough.')
+         connection.disconnect()})})}})     
    
       
 //voice channel log      
