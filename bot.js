@@ -36,7 +36,7 @@ bot.music.start(bot, {
 //})
 
 bot.on('ready', () => {
-   bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
+//bot.user.setActivity('Rainbow Six Siege', { type: 'PLAYING' })
 bot.user.setStatus('idle')
 });
 
